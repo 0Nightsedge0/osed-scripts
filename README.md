@@ -8,7 +8,7 @@ bespoke tooling for offensive security's Windows Usermode Exploit Dev course (OS
     - [find-gadgets.py](#find-gadgetspy)
     - [shellcoder.py](#shellcoderpy)
     - [install-mona.sh](#install-monash)
-    - [install-pykd-py39.sh](#install-pykd-py39sh)
+    - [install-pykd-py3.sh](#install-pykd-py3sh)
     - [attach-process.ps1](#attach-processps1)
 - [WinDbg Scripts](#windbg-scripts)
     - [find-ppr.py](#find-pprpy)
