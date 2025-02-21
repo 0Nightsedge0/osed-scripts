@@ -2,17 +2,22 @@
 
 # Function to display usage information
 function display_help {
-    echo "Usage: install-pykd-py39.sh <RDP_IP_Addr> <username> <password>"
+    echo "Usage: install-pykd-py3.sh <RDP_IP_Addr> <username> <password>"
     echo "Options:"
     echo "  -h  Display this help message"
 }
 
 TOOLS=(
+    # From: https://github.com/ivellioscolin/pykd-ext/releases
     "https://github.com/user-attachments/files/18549260/pykd_ext_2.0.0.25_x86.zip"
+    # From: https://pypi.org/project/pykd/#files
+    ## 3.9 x86
     "https://files.pythonhosted.org/packages/67/f7/19b2380834b6b4312a89731b0f00c8185b7f1ac015f2947da2969de5b37d/pykd-0.3.4.15-cp39-none-win32.whl"
+    ## 3.8 x86
+    "https://files.pythonhosted.org/packages/f3/41/54f0561d2e431315b31a11b140953439e46ee6cfd0f944fc5600a2c90b84/pykd-0.3.4.15-cp38-none-win32.whl"
 )
 
-echo "[*] Script for installing pykd for python3.9"
+echo "[*] Script for installing pykd for python3.9 & 3.8"
 echo "Respect and original idea: epi052"
 
 # Check if no arguments provided or -h flag is used
@@ -24,7 +29,7 @@ fi
 TMPDIR=$(mktemp -d)
 SHARENAME="pykd_share"
 SHARE="\\\\tsclient\\$SHARENAME"
-SCRIPT_NAME="install-pykd-py39.ps1"
+SCRIPT_NAME="install-pykd-py3.ps1"
 
 echo "[+] Created temp directory: $TMPDIR"
 echo "[+] Copy $SCRIPT_NAME to $TMPDIR"

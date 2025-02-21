@@ -178,22 +178,22 @@ Clipboard(error): xclip_handle_SelectionNotify(), unable to find a textual targe
 
 ```
 
-### install-pykd-py39.sh
+### install-pykd-py3.sh
 
-For python 3.9 only!
+For python 3.9 & 3.8 only!
 
 downloads all components necessary to install pykd and prompts you to use an admin shell on the windows box to finish installation.
 
-##### Usage: `install-pykd-py39.sh <RDP_IP_Addr> <username> <password>`
+##### Usage: `install-pykd-py3.sh <RDP_IP_Addr> <username> <password>`
 
 ```
-[*] Script for installing pykd for python3.9
+[*] Script for installing pykd for python3.9 & 3.8
 Respect and original idea: epi052
 [+] Created temp directory: /tmp/tmp.R4MtcYZ1FP
-[+] Copy install-pykd-py39.ps1 to /tmp/tmp.R4MtcYZ1FP
+[+] Copy install-pykd-py3.ps1 to /tmp/tmp.R4MtcYZ1FP
 [+] once the RDP window opens, execute the following command in an Administrator terminal:
 
-powershell -c "cat \\tsclient\pykd_share\install-pykd-py39.ps1 | powershell -"
+powershell -c "cat \\tsclient\pykd_share\install-pykd-py3.ps1 | powershell -"
 
 [=] downloading https://github.com/user-attachments/files/18549260/pykd_ext_2.0.0.25_x86.zip
 [=] downloading https://files.pythonhosted.org/packages/67/f7/19b2380834b6b4312a89731b0f00c8185b7f1ac015f2947da2969de5b37d/pykd-0.3.4.15-cp39-none-win32.whl
@@ -207,7 +207,7 @@ Clipboard(error): xclip_handle_SelectionNotify(), unable to find a textual targe
 ```
 
 ```
-powershell -c "cat \\tsclient\pykd_share\install-pykd-py39.ps1 | powershell -"
+powershell -c "cat \\tsclient\pykd_share\install-pykd-py3.ps1 | powershell -"
 [+] The script is running with administrative privileges.
 [+] Creating folders
 

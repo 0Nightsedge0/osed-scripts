@@ -16,6 +16,21 @@ function Get-CurrentUserName {
     return $userName
 }
 
+function Check-PythonVersion {
+    $pythonver = python --version
+    $ver = $pythonver.Split(" ")[1] -replace "`n","" -replace "`r",""
+    $majorver = $ver.Split(".")[0]
+    $minorver = $ver.Split(".")[1]
+    if ([int]$majorver -ne 3){
+        Write-Output "[!] Error: The script needs python3"
+        exit
+    }
+    return $minorver
+}
+
+$py_minor_ver = Check-PythonVersion
+Write-Output "[+] Python3 minor version: $($py_minor_ver)"
+
 # Call the function to get the current username
 $currentUserName = Get-CurrentUserName
 
@@ -25,7 +40,15 @@ Set-ExecutionPolicy bypass -Force
 
 $share_path = "\\tsclient\pykd_share"
 $install_dir = "C:\Users\$($currentUserName)\Desktop\pykd_share\"
-$pykd_whl = "pykd-0.3.4.15-cp39-none-win32.whl"
+# hardcoded
+if ([int]$py_minor_ver -eq 8){
+    $pykd_whl = "pykd-0.3.4.15-cp38-none-win32.whl"
+}elseif ([int]$py_minor_ver -eq 9){
+    $pykd_whl = "pykd-0.3.4.15-cp39-none-win32.whl"
+}else{
+    Write-Output "[!] Error: Sorry not support for your python3 version"
+    exit
+}
 
 # create folders and copy the windbg extension to there
 Write-Output "[+] Creating folders"
